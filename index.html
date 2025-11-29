@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EarthLine Freight Network | Canada ⇄ USA Freight</title>
+  <meta name="description" content="EarthLine Freight Network - Online-first freight brokerage connecting shippers and carriers across Canada, USA and global lanes. Cross-border, FTL, LTL, reefer, flatbed, dispatch.">
+  <style>
+    :root {
+      --primary: #003366;
+      --primary-light: #0a8bf0;
+      --bg-light: #f4f5f7;
+      --text-main: #111111;
+      --text-muted: #555555;
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-main);
+    }
+
+    /* HEADER / NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 12px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-wrap img {
+      height: 52px;
+    }
+
+    .logo-text {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--primary-light);
+    }
+
+    /* GENERAL SECTIONS */
+    section {
+      padding: 70px 8%;
+      background: var(--card-bg);
+      margin: 16px auto;
+      max-width: 1200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    section h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 30px;
+      color: var(--primary);
+    }
+
+    section p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding-top: 90px;
+    }
+
+    .hero-logo {
+      max-width: 260px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 6px;
+      color: #001b33;
+    }
+
+    .hero h3 {
+      margin-top: 0;
+      font-size: 18px;
+      font-weight: normal;
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 22px;
+      font-size: 15px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 5px;
+      transition: background 0.2s, color 0.2s, transform 0.1s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #0050a3;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* FLEX LAYOUTS */
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .three-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 18px 20px;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    .card p, .card li {
+      font-size: 14px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e8f2ff;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      text-align: center;
+      padding: 55px 5%;
+      background: #001322;
+      color: #ffffff;
+      margin-top: 30px;
+    }
+
+    .cta-strip h3 {
+      margin-top: 0;
+      font-size: 26px;
+    }
+
+    .cta-strip p {
+      color: #d9e4f5;
+      max-width: 520px;
+      margin: 8px auto 18px;
+      font-size: 14px;
+    }
+
+    .cta-strip .btn-primary {
+      background: #ffffff;
+      color: #001322;
+    }
+
+    .cta-strip .btn-primary:hover {
+      background: #d9e4f5;
+    }
+
+    /* CONTACT FORM SIMPLE LOOK (not functional, just layout) */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+      gap: 24px;
+    }
+
+    .contact-grid label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #333;
+    }
+
+    .contact-grid input,
+    .contact-grid select,
+    .contact-grid textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #d0d4dc;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .contact-grid textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000e19;
+      color: #d0d7e2;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 13px;
+      margin-top: 0;
+    }
+
+    footer a {
+      color: #55b8ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .hero {
+        padding-top: 70px;
+      }
+      .two-column,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+      section {
+        padding: 55px 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER / NAV -->
+<header>
+  <div class="logo-wrap">
+    <!-- Replace YOUR-LOGO.png with your actual logo file or remove img if not needed -->
+    <img src="YOUR-LOGO.png" alt="EarthLine Freight Network Logo">
+    <div class="logo-text">EarthLine Freight Network</div>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#shippers">Shippers</a>
+    <a href="#carriers">Carriers</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO / HOME -->
+<section id="home" class="hero">
+  <!-- Optional banner under logo -->
+  <!-- <img src="YOUR-BANNER.png" alt="EarthLine Freight Network Banner" class="hero-logo"> -->
+  <h1>EarthLine Freight Network</h1>
+  <h3><i>The world moves. We deliver.</i></h3>
+  <p>
+    EarthLine Freight Network is a fully online freight brokerage, operated between
+    <b>Canada and India</b>, connecting shippers and carriers across
+    <b>Canada, the USA and global trade lanes</b>. We move dry vans, reefers, flatbeds
+    and cross-border loads with fast, digital-first communication.
+  </p>
+  <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    Get a Freight Quote
+  </button>
+  <!-- Replace with your real WhatsApp link: https://wa.me/COUNTRYCODEPHONENUMBER (no +) -->
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">
+    <button class="btn btn-outline">WhatsApp Us</button>
+  </a>
+</section>
+
+<!-- WHAT WE DO / SERVICES TEASER -->
+<section id="services">
+  <span class="pill">What We Do</span>
+  <h2>Freight & Dispatch Services</h2>
+  <p>
+    We design freight solutions around your lanes, timelines and budget. Whether you're moving a single urgent pallet or
+    regular truckloads each week, we match you with the right equipment and reliable carriers.
+  </p>
+
+  <div class="three-column">
+    <div class="card">
+      <h3>Cross-Border Canada ⇄ USA</h3>
+      <p>
+        Seamless freight between Canada and the United States, working with carriers who understand customs procedures
+        and border timing to reduce delays and uncertainty.
+      </p>
+    </div>
+    <div class="card">
+      <h3>FTL & LTL</h3>
+      <p>
+        Full-Truckload (FTL) and Less-Than-Truckload (LTL) options tailored to your volume and schedule, for both
+        one-time and recurring shipments.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Reefer & Temperature-Controlled</h3>
+      <p>
+        Temperature-sensitive and food-grade freight with reefer capacity on lanes requiring tight control and punctual delivery.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Flatbed & Specialized</h3>
+      <p>
+        Flatbed, step-deck and specialized equipment for building materials, machinery, oversized and project cargo.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Dispatch & Load Coordination</h3>
+      <p>
+        Dedicated dispatch support for carriers and owner-operators to fill empty miles, negotiate rates and manage paperwork.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SHIPPERS -->
+<section id="shippers">
+  <span class="pill">For Shippers</span>
+  <h2>Freight Solutions for Shippers & Manufacturers</h2>
+  <div class="two-column">
+    <div>
+      <p>
+        Whether you move freight once a month or every day, you need capacity you can rely on. EarthLine Freight Network
+        offers consistent lanes, fast spot coverage and honest communication so you can focus on your core business.
+      </p>
+      <h3>How We Help Shippers</h3>
+      <ul>
+        <li><b>Capacity When You Need It</b> – Access to a network of vetted carriers across Canada and the US.</li>
+        <li><b>Optimized Lanes & Rates</b> – We balance cost and transit time for smarter, reliable shipping plans.</li>
+        <li><b>Single Point of Contact</b> – One team handles quotes, bookings and updates.</li>
+        <li><b>Live Updates & PODs</b> – Clear communication from pick-up to proof of delivery.</li>
+      </ul>
+
+      <h3>Simple 3-Step Process</h3>
+      <ol>
+        <li><b>Share Your Load</b> – Origin, destination, weight, commodity, dates, special requirements.</li>
+        <li><b>Receive Your Options</b> – We send you route &amp; rate options with clear terms.</li>
+        <li><b>Book &amp; Track</b> – Confirm the option that fits best and track until delivery.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Industries We Serve</h3>
+      <ul>
+        <li>Consumer goods</li>
+        <li>Food &amp; beverages</li>
+        <li>Building materials</li>
+        <li>Industrial &amp; manufacturing</li>
+        <li>Retail &amp; e-commerce</li>
+      </ul>
+      <p><b>Have a load ready?</b><br>Use the form in the Contact section or message us on WhatsApp for a quick quote.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Request Shipper Quote
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CARRIERS -->
+<section id="carriers">
+  <span class="pill">For Carriers</span>
+  <h2>Run with EarthLine – For Carriers & Owner-Operators</h2>
+  <div class="two-column">
+    <div>
+      <p>
+        You work hard for every mile. Our job is to make those miles count. EarthLine partners with owner-operators and
+        small fleets to find good freight on lanes that match your preferences and target rates.
+      </p>
+
+      <h3>What Carriers Get</h3>
+      <ul>
+        <li><b>Consistent Freight</b> – We seek regular lanes so your week is more predictable.</li>
+        <li><b>Respectful Rates</b> – Fair, transparent rate discussion before you accept.</li>
+        <li><b>Clear Load Details</b> – No surprises at the dock – weights, commodity and requirements are shared clearly.</li>
+        <li><b>Paperwork Support</b> – Help with rate confirmations, PODs and check-ins.</li>
+        <li><b>Long-Term Relationships</b> – We prefer to grow with the same carriers over time.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>How to Start with EarthLine</h3>
+      <ol>
+        <li><b>Send Your Info</b> – Equipment type, preferred lanes, target RPM/rate, availability.</li>
+        <li><b>Complete Onboarding</b> – Share safety documents, insurance and basic carrier profile.</li>
+        <li><b>Start Receiving Loads</b> – We contact you with matching opportunities; you choose what fits.</li>
+      </ol>
+      <p><b>Interested in running with EarthLine?</b><br>Share your details and we'll reach out with opportunities.</p>
+      <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Carrier Registration
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <span class="pill">About</span>
+  <h2>About EarthLine Freight Network</h2>
+  <div class="two-column">
+    <div>
+      <p>
+        EarthLine Freight Network was founded with a simple idea: connect global thinking with local, reliable freight
+        execution. From our operations base in India and connections in Canada, we coordinate loads across Canada and
+        the USA using technology, market knowledge and real communication to keep freight moving smoothly.
+      </p>
+      <h3>Our Vision</h3>
+      <p>
+        To become a trusted bridge between shippers and carriers, building supply lines that are efficient, transparent
+        and sustainable for everyone involved.
+      </p>
+    </div>
+    <div>
+      <h3>Our Values</h3>
+      <ul>
+        <li><b>Integrity</b> – We say what we’ll do, and we do it.</li>
+        <li><b>Reliability</b> – Shippers and carriers can count on us for honest updates.</li>
+        <li><b>Partnership</b> – We focus on long-term relationships, not one-off loads.</li>
+        <li><b>Continuous Improvement</b> – We learn from every shipment and keep improving.</li>
+      </ul>
+
+      <h3>What Makes EarthLine Different</h3>
+      <p>
+        We understand both sides of the road – the needs of shippers and the realities of trucking. That balance helps
+        us build solutions where everyone wins, operated fully online through modern tools like email, WhatsApp and
+        Telegram.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / QUOTE -->
+<section id="contact">
+  <span class="pill">Contact</span>
+  <h2>Contact EarthLine / Request a Quote</h2>
+  <div class="contact-grid">
+    <!-- FORM (front-end only, you’ll connect it later if you want) -->
+    <div>
+      <p>Tell us about your freight or your truck – we’ll respond as quickly as possible with options.</p>
+      <form>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name">
+
+        <label for="company">Company (optional)</label>
+        <input id="company" type="text" placeholder="Company name">
+
+        <label for="role">I am a</label>
+        <select id="role">
+          <option>Shipper</option>
+          <option>Carrier / Owner-Operator</option>
+        </select>
+
+        <label for="origin">Origin City / Country</label>
+        <input id="origin" type="text" placeholder="e.g., Toronto, Canada">
+
+        <label for="destination">Destination City / Country</label>
+        <input id="destination" type="text" placeholder="e.g., Chicago, USA">
+
+        <label for="freight">Type of Freight / Equipment</label>
+        <input id="freight" type="text" placeholder="Dry van, reefer, flatbed, LTL, etc.">
+
+        <label for="dates">Estimated Date(s)</label>
+        <input id="dates" type="text" placeholder="Pick-up & delivery window">
+
+        <label for="message">Message / Details</label>
+        <textarea id="message" placeholder="Any additional details..."></textarea>
+
+        <button type="button" class="btn btn-primary">
+          Submit (demo form only)
+        </button>
+      </form>
+    </div>
+
+    <!-- DIRECT CONTACT INFO -->
+    <div>
+      <div class="card">
+        <h3>Direct Contact</h3>
+        <p><b>Email:</b> <br>
+          <a href="mailto:earthlinefreight@yourmail.com">earthlinefreight@yourmail.com</a>
+        </p>
+        <p><b>WhatsApp:</b> <br>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">+91-XXXXXXXXXX</a>
+        </p>
+        <p><b>Online Network:</b><br>
+          (Optional) Telegram load channel / carrier hub links here.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h3>Ready to move your next load?</h3>
+  <p>
+    Share your lane details and we’ll send you options quickly – all handled online,
+    with clear communication from pick-up to POD.
+  </p>
+  <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    Request a Quote
+  </button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 EarthLine Freight Network — Digital operations between Canada & India.  
+  All rights reserved. | Website concept generated with assistance from ChatGPT.
+</footer>
+
+</body>
+</html>
