@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EarthLine Freight Network | Canada ⇄ USA Freight</title>
   <meta name="description" content="EarthLine Freight Network - Online-first freight brokerage connecting shippers and carriers across Canada, USA and global lanes. Cross-border, FTL, LTL, reefer, flatbed, dispatch.">
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Simple favicon using the same logo (optional) -->
+  <link rel="icon" type="image/png" href="logo.png">
+
   <style>
     :root {
       --primary: #003366;
@@ -32,7 +34,7 @@
       top: 0;
       z-index: 100;
       background: #ffffff;
-      padding: 12px 6%;
+      padding: 10px 6%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -46,13 +48,9 @@
     }
 
     .logo-wrap img {
-      height: 52px;
-    }
-
-    .logo-text {
-      font-weight: bold;
-      color: var(--primary);
-      font-size: 18px;
+      height: 50px;
+      width: auto;
+      display: block;
     }
 
     nav a {
@@ -96,22 +94,10 @@
       padding-top: 90px;
     }
 
-    /* FADE-IN ANIMATION FOR LOGO */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .hero-logo {
       max-width: 260px;
+      width: 100%;
       margin-bottom: 18px;
-      animation: fadeInUp 0.9s ease-out;
     }
 
     .hero h1 {
@@ -285,9 +271,22 @@
       background: #000e19;
       color: #d0d7e2;
       text-align: center;
-      padding: 26px 8%;
+      padding: 20px 8%;
       font-size: 13px;
       margin-top: 0;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    footer img {
+      height: 28px;
+      width: auto;
     }
 
     footer a {
@@ -305,24 +304,16 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-        padding: 10px 5%;
       }
-
-      .logo-wrap img {
-        height: 46px;
-      }
-
       nav {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
         margin-top: 4px;
       }
-
       .hero {
         padding-top: 70px;
       }
-
       .two-column,
       .contact-grid {
         grid-template-columns: 1fr;
@@ -333,15 +324,12 @@
       .hero h1 {
         font-size: 30px;
       }
-
       .hero-logo {
         max-width: 210px;
       }
-
       .logo-wrap img {
         height: 40px;
       }
-
       section {
         padding: 55px 6%;
       }
@@ -353,7 +341,6 @@
 <!-- HEADER / NAV -->
 <header>
   <div class="logo-wrap">
-    <!-- Logo only in header -->
     <img src="logo.png" alt="EarthLine Freight Network Logo">
   </div>
   <nav>
@@ -618,10 +605,10 @@
   </button>
 </div>
 
-<!-- FOOTER WITH LOGO -->
+<!-- FOOTER -->
 <footer>
-  <div style="display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; text-align:center;">
-    <img src="logo.png" alt="EarthLine Freight Network Logo" style="height:30px;">
+  <div class="footer-inner">
+    <img src="logo.png" alt="EarthLine Freight Network Logo">
     <span>© 2025 EarthLine Freight Network — Digital operations between Canada &amp; India.
     All rights reserved. | Website concept generated with assistance from ChatGPT.</span>
   </div>
