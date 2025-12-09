@@ -76,7 +76,7 @@
       color: var(--primary-accent);
     }
 
-    /* GENERIC SECTION STYLING */
+    /* MAIN LAYOUT */
     main {
       padding: 0 4%;
     }
@@ -176,6 +176,7 @@
     .btn-outline {
       border: 1px solid var(--primary);
       color: var(--primary);
+      background: #ffffff;
     }
 
     .btn-outline:hover {
@@ -183,6 +184,13 @@
       color: #ffffff;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
       transform: translateY(-1px);
+    }
+
+    .btn-outline[disabled] {
+      opacity: 0.7;
+      cursor: default;
+      box-shadow: none;
+      transform: none;
     }
 
     /* LAYOUT HELPERS */
@@ -334,6 +342,12 @@
       resize: vertical;
     }
 
+    .form-note {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
     /* CTA STRIP */
     .cta-strip {
       text-align: center;
@@ -459,10 +473,9 @@
     <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
       Request a Freight Quote
     </button>
-    <!-- Replace with your real WhatsApp link: https://wa.me/COUNTRYCODEPHONENUMBER (no +) -->
-    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">
-      <button class="btn btn-outline">WhatsApp Us</button>
-    </a>
+    <button class="btn btn-outline" disabled>
+      WhatsApp (coming soon)
+    </button>
   </section>
 
   <!-- TRUSTED BY -->
@@ -488,8 +501,8 @@
     <span class="pill">What We Do</span>
     <h2>Freight & Dispatch Services</h2>
     <p>
-      We design freight solutions around your lanes, timelines and budget. Whether you're moving a single urgent pallet
-      or weekly truckloads, we match you with the right equipment and reliable carriers.
+      We design freight solutions around your lanes, timelines and budget. Whether you're moving a single urgent pallet or
+      regular truckloads each week, we match you with the right equipment and reliable carriers.
     </p>
 
     <div class="three-column">
@@ -658,17 +671,20 @@
     <span class="pill">Contact</span>
     <h2>Request a Quote / Contact EarthLine</h2>
     <div class="contact-grid">
-      <!-- FORM (Formspree-ready) -->
+      <!-- FORM (layout ready, not active yet) -->
       <div>
         <p>
-          Share your lane details and we’ll reply as quickly as possible with options. This form sends directly to our
-          inbox so we can respond personally.
+          This contact layout is ready for activation. Once our final business email and WhatsApp number are set up,
+          this form will be connected so shippers and carriers can reach us directly.
+        </p>
+        <p class="form-note">
+          Form & direct email integration: <b>coming soon</b>. For now, this is a preview of how shippers will send lane details.
         </p>
 
-        <!-- TODO: Replace FORM ACTION with your real Formspree endpoint -->
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <!-- Later: add action="https://formspree.io/f/your_id" and method="POST" -->
+        <form>
           <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required />
+          <input id="name" name="name" type="text" placeholder="Your name" />
 
           <label for="company">Company (optional)</label>
           <input id="company" name="company" type="text" placeholder="Company name" />
@@ -681,7 +697,7 @@
           </select>
 
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <input id="email" name="email" type="email" placeholder="you@example.com" />
 
           <label for="phone">Phone / WhatsApp</label>
           <input id="phone" name="phone" type="text" placeholder="+1 or +91 number" />
@@ -701,8 +717,8 @@
           <label for="message">Load Details / Message</label>
           <textarea id="message" name="message" placeholder="Weight, pallets, commodity, appointment times, special notes..."></textarea>
 
-          <button type="submit" class="btn btn-primary">
-            Submit Quote Request
+          <button type="button" class="btn btn-primary">
+            Form activation coming soon
           </button>
         </form>
       </div>
@@ -713,16 +729,15 @@
           <h3>Direct Contact</h3>
           <p>
             <b>Email:</b><br />
-            <a href="mailto:earthlinefreight28@gmail.com">earthlinefreight28@gmail.com</a>
+            <span>Coming soon</span>
           </p>
           <p>
             <b>WhatsApp:</b><br />
-            <!-- Replace with your real number -->
-            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">+91-XXXXXXXXXX</a>
+            <span>Coming soon</span>
           </p>
           <p>
-            <b>Online Network:</b><br />
-            Future: Telegram lane channel / load board links can go here.
+            <b>Note:</b><br />
+            Business email, domain and WhatsApp number will be added once our final communication setup is complete.
           </p>
         </div>
       </div>
@@ -734,10 +749,11 @@
 <div class="cta-strip">
   <h3>Ready to move your next load?</h3>
   <p>
-    Send us your lane and basic details. We’ll return with options and clear expectations – no fluff, no spam.
+    EarthLine Freight Network is building a focused, digital-first brokerage for Canada ⇄ USA lanes. Formal contact
+    channels are being set up and will be live soon.
   </p>
-  <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-    Request a Quote
+  <button class="btn btn-primary" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">
+    Back to Top
   </button>
 </div>
 
