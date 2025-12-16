@@ -3,195 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EarthLine Freight Network | Canada Freight Brokerage</title>
-
-  <meta name="description" content="EarthLine Freight Network is a Canada-based freight brokerage coordinating dry van, reefer and flatbed freight across major Canadian lanes." />
+  <title>EarthLine Freight Network | Canada-Wide Freight Brokerage</title>
+  <meta name="description" content="EarthLine Freight Network — Canada-wide freight brokerage for FTL/LTL across major Canadian lanes. Dry van, reefer, flatbed, dispatch and load coordination." />
 
   <style>
-    :root {
-      --navy: #0b2a4a;
-      --light-blue: #1e90ff;
-      --bg: #f5f7fa;
-      --text: #1a1a1a;
-      --muted: #555;
-      --white: #ffffff;
+    :root{
+      --navy:#003366;
+      --blue:#0a8bf0;
+      --bg:#f4f5f7;
+      --text:#111;
+      --muted:#555;
+      --card:#fff;
+      --line:#d7deea;
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
     }
 
-    /* HEADER */
-    header {
-      background: var(--white);
-      padding: 14px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    header{
+      position:sticky; top:0; z-index:100;
+      background:#fff;
+      padding:12px 6%;
+      display:flex; align-items:center; justify-content:space-between;
+      box-shadow:0 2px 10px rgba(0,0,0,.08);
     }
 
-    .brand {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--navy);
-    }
+    .logo-wrap{display:flex; align-items:center; gap:10px;}
+    .logo-wrap img{height:52px; width:auto; display:block;}
+    .logo-text{font-weight:800; color:var(--navy); font-size:18px; letter-spacing:.2px;}
 
-    nav a {
-      margin-left: 16px;
-      text-decoration: none;
-      color: var(--navy);
-      font-weight: 600;
-      font-size: 14px;
+    nav a{
+      margin:0 10px; text-decoration:none;
+      color:var(--navy); font-weight:700; font-size:14px;
     }
+    nav a:hover{color:var(--blue);}
 
-    nav a:hover {
-      color: var(--light-blue);
+    section{
+      padding:70px 8%;
+      background:var(--card);
+      margin:16px auto;
+      max-width:1200px;
+      border-radius:12px;
+      box-shadow:0 4px 16px rgba(0,0,0,.04);
     }
-
-    /* SECTIONS */
-    section {
-      background: var(--white);
-      max-width: 1200px;
-      margin: 18px auto;
-      padding: 70px 8%;
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    section h2{
+      margin:0 0 14px;
+      font-size:30px; color:var(--navy);
     }
+    section p{color:var(--muted); line-height:1.6; font-size:15px;}
 
-    h1 {
-      font-size: 38px;
-      margin-bottom: 10px;
-      color: var(--navy);
-    }
-
-    h2 {
-      font-size: 28px;
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-
-    h3 {
-      color: var(--navy);
-      margin-top: 0;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 15px;
+    .pill{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#e8f2ff;
+      color:var(--navy);
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:10px;
     }
 
     /* HERO */
-    .hero {
-      text-align: center;
-      padding-top: 90px;
+    .hero{ text-align:center; padding-top:80px; }
+    .hero-logo{max-width:220px; margin:0 auto 16px; display:block;}
+    .hero h1{font-size:40px; margin:8px 0 8px; color:#001b33;}
+    .hero h3{margin:0 0 14px; font-size:18px; font-weight:normal; color:#555;}
+    .hero p{max-width:760px; margin:0 auto 22px; font-size:15px;}
+
+    .btn{
+      padding:12px 24px;
+      border-radius:8px;
+      border:none;
+      font-size:15px;
+      font-weight:800;
+      cursor:pointer;
+      margin:5px;
+      transition:transform .12s, background .2s, color .2s;
+    }
+    .btn-primary{background:var(--navy); color:#fff;}
+    .btn-primary:hover{background:#004a93; transform:translateY(-1px);}
+    .btn-outline{background:transparent; color:var(--navy); border:2px solid var(--navy);}
+    .btn-outline:hover{background:var(--navy); color:#fff; transform:translateY(-1px);}
+
+    .two-column{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:28px;
+      align-items:flex-start;
+    }
+    .three-column{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
     }
 
-    .hero-tagline {
-      font-size: 18px;
-      color: #444;
-      margin-bottom: 18px;
+    .card{
+      background:#fff;
+      border-radius:12px;
+      padding:18px 20px;
+      border:1px solid var(--line);
+      box-shadow:0 1px 10px rgba(0,0,0,.04);
     }
+    .card h3{margin:0 0 6px; font-size:18px; color:var(--navy);}
+    .card p, .card li{font-size:14px; color:var(--muted); margin:0;}
+    ul,ol{padding-left:20px}
+    li{margin-bottom:6px}
 
-    /* BUTTONS */
-    .btn {
-      padding: 12px 24px;
-      border-radius: 6px;
-      border: none;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      margin: 6px;
+    /* LANE MAP */
+    .map-wrap{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:14px;
+      background:#fbfcff;
+      overflow:hidden;
     }
-
-    .btn-primary {
-      background: var(--navy);
-      color: white;
+    .map-title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; margin:0 0 10px;
     }
+    .map-title h3{margin:0; font-size:18px; color:var(--navy);}
+    .map-note{font-size:12px; color:var(--muted); margin:0;}
 
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--navy);
-      color: var(--navy);
+    /* CTA STRIP */
+    .cta-strip{
+      text-align:center;
+      padding:55px 5%;
+      background:#001322;
+      color:#fff;
+      margin-top:30px;
     }
+    .cta-strip h3{margin:0; font-size:26px;}
+    .cta-strip p{color:#d9e4f5; max-width:560px; margin:10px auto 18px; font-size:14px;}
+    .cta-strip .btn-primary{background:#fff; color:#001322;}
+    .cta-strip .btn-primary:hover{background:#d9e4f5;}
 
-    .btn-primary:hover,
-    .btn-outline:hover {
-      background: var(--light-blue);
-      color: white;
-      border-color: var(--light-blue);
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:minmax(0, 2fr) minmax(0, 1.3fr);
+      gap:24px;
     }
-
-    /* GRID */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+    .contact-grid label{
+      display:block;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:4px;
+      color:#333;
     }
-
-    .card {
-      background: var(--white);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    .contact-grid input, .contact-grid select, .contact-grid textarea{
+      width:100%;
+      padding:9px 10px;
+      border-radius:8px;
+      border:1px solid #d0d4dc;
+      font-size:13px;
+      margin-bottom:10px;
     }
+    .contact-grid textarea{min-height:110px; resize:vertical;}
 
-    ul {
-      padding-left: 18px;
+    footer{
+      background:#000e19;
+      color:#d0d7e2;
+      text-align:center;
+      padding:26px 8%;
+      font-size:13px;
     }
+    footer a{color:#55b8ff; text-decoration:none;}
+    footer a:hover{text-decoration:underline;}
 
-    li {
-      margin-bottom: 8px;
-      color: var(--muted);
-      font-size: 14px;
+    @media (max-width: 900px){
+      header{flex-direction:column; align-items:flex-start; gap:8px;}
+      nav{display:flex; flex-wrap:wrap; gap:8px;}
+      .hero{padding-top:60px;}
+      .two-column, .contact-grid{grid-template-columns:1fr;}
     }
-
-    /* CTA */
-    .cta {
-      background: var(--navy);
-      color: white;
-      text-align: center;
-      padding: 60px 8%;
-    }
-
-    .cta p {
-      color: #dbe7ff;
-      max-width: 520px;
-      margin: 10px auto 20px;
-    }
-
-    .cta .btn-primary {
-      background: white;
-      color: var(--navy);
-    }
-
-    /* FOOTER */
-    footer {
-      background: #071c33;
-      color: #cfd8e3;
-      text-align: center;
-      padding: 26px 8%;
-      font-size: 13px;
-    }
-
-    footer a {
-      color: #8fc2ff;
-      text-decoration: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .grid-2 { grid-template-columns: 1fr; }
-      h1 { font-size: 30px; }
+    @media (max-width: 600px){
+      .hero h1{font-size:30px;}
+      section{padding:55px 6%;}
     }
   </style>
 </head>
@@ -199,120 +191,260 @@
 <body>
 
 <header>
-  <div class="brand">EarthLine Freight Network</div>
+  <div class="logo-wrap">
+    <!-- Use your clean white background logo file here -->
+    <img src="logo.png" alt="EarthLine Freight Network Logo">
+    <div class="logo-text">EarthLine Freight Network</div>
+  </div>
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
-    <a href="#lanes">Lanes</a>
+    <a href="#lanes">Key Lanes</a>
+    <a href="#shippers">Shippers</a>
+    <a href="#carriers">Carriers</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section id="home" class="hero">
-  <h1>Canada Freight, Done Right</h1>
-  <div class="hero-tagline"><i>The world moves. We deliver.</i></div>
-
+  <img src="logo.png" class="hero-logo" alt="EarthLine Freight Network Logo">
+  <h1>Canada-Wide Freight Brokerage</h1>
+  <h3><i>The world moves. We deliver.</i></h3>
   <p>
-    EarthLine Freight Network is a Canada-based freight brokerage coordinating
-    reliable truckload and LTL transportation across major Canadian corridors.
-    We work digitally with shippers and carriers to move freight efficiently,
-    transparently, and professionally.
+    EarthLine Freight Network is a digital-first freight brokerage focused on
+    <b>Canada-wide lanes</b> — matching shippers with reliable carriers for
+    <b>FTL &amp; LTL</b> across major Canadian corridors.
   </p>
 
   <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-    Get a Freight Quote
+    Request a Quote
   </button>
-
-  <a href="https://wa.me/12269751544" target="_blank">
-    <button class="btn btn-outline">WhatsApp Us</button>
-  </a>
+  <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    Contact Us
+  </button>
 </section>
 
 <section id="services">
-  <h2>Our Services</h2>
+  <span class="pill">What We Do</span>
+  <h2>Freight & Dispatch Services Across Canada</h2>
+  <p>
+    Simple, clear execution: fast quoting, carrier matching, and consistent updates from pickup to POD —
+    handled online through modern communication.
+  </p>
 
-  <div class="grid-2">
+  <div class="three-column">
     <div class="card">
-      <h3>FTL & LTL Freight</h3>
-      <p>Dry van, reefer, and flatbed freight for one-time or recurring shipments across Canada.</p>
+      <h3>FTL & LTL (Canada-wide)</h3>
+      <p>Full truckload and partial/LTL options based on your lane, schedule, and freight profile.</p>
     </div>
-
     <div class="card">
-      <h3>Carrier Coordination</h3>
-      <p>Working with professional carriers and owner-operators to cover lanes efficiently.</p>
+      <h3>Dry Van • Reefer • Flatbed</h3>
+      <p>Support for common equipment types used across Canadian retail, industrial, and food lanes.</p>
     </div>
-
     <div class="card">
-      <h3>Lane-Based Planning</h3>
-      <p>Focused on high-volume Canadian corridors to reduce empty miles and delays.</p>
+      <h3>Dispatch & Load Coordination</h3>
+      <p>Carrier-side support for load booking, updates, POD collection, and smooth communication.</p>
     </div>
-
     <div class="card">
-      <h3>Digital Communication</h3>
-      <p>Fast coordination using email and WhatsApp for clear updates and documentation.</p>
+      <h3>Transparent Communication</h3>
+      <p>Clear load details, check-ins, and delivery confirmation — no surprises at the dock.</p>
+    </div>
+    <div class="card">
+      <h3>Cross-Border (Later)</h3>
+      <p>Canada–USA cross-border capability will be added once fully operational with the right partners.</p>
     </div>
   </div>
 </section>
 
 <section id="lanes">
-  <h2>Key Canadian Freight Lanes</h2>
+  <span class="pill">Key Lanes</span>
+  <h2>High-Volume Canadian Freight Lanes</h2>
+  <p>We focus on practical, high-demand lanes where consistent capacity and clear communication matter.</p>
 
-  <ul>
-    <li><b>Toronto (GTA) ⇄ Montreal</b> – Canada’s busiest freight corridor driven by retail, food, pharma, and manufacturing.</li>
-    <li><b>Toronto (GTA) ⇄ Calgary / Edmonton</b> – Major east–west lane serving industrial and distribution freight.</li>
-    <li><b>Toronto (GTA) ⇄ Vancouver</b> – National long-haul corridor supporting import, retail, and consumer goods.</li>
-    <li><b>Montreal ⇄ Halifax / Moncton</b> – Atlantic regional distribution and port-connected freight.</li>
-    <li><b>GTA ⇄ Southern Ontario</b> – High-frequency short-haul lanes for automotive and manufacturing supply chains.</li>
-  </ul>
-
-  <p>
-    We currently operate within Canada only, with plans to expand into cross-border lanes in the future.
-  </p>
-</section>
-
-<section id="contact">
-  <h2>Contact EarthLine</h2>
-
-  <div class="grid-2">
+  <div class="two-column">
     <div>
-      <p>
-        Share your shipment details and we’ll respond with options.
-        We currently coordinate Canada-wide freight only.
-      </p>
-
-      <p><b>WhatsApp:</b><br>
-        <a href="https://wa.me/12269751544" target="_blank">+1 226 975 1544</a>
-      </p>
-
-      <p><b>Email:</b><br>
-        (Business email will be added after setup)
-      </p>
+      <div class="three-column">
+        <div class="card">
+          <h3>Toronto (GTA) ⇄ Montreal</h3>
+          <p>Canada’s highest-volume lane driven by retail, food, pharma, and manufacturing with strong two-way demand.</p>
+        </div>
+        <div class="card">
+          <h3>Toronto (GTA) ⇄ Calgary / Edmonton</h3>
+          <p>Major east-west corridor supporting industrial, packaged food, and retail freight across the Prairies.</p>
+        </div>
+        <div class="card">
+          <h3>Toronto (GTA) ⇄ Vancouver / Lower Mainland</h3>
+          <p>Critical national lane moving import, retail, and time-sensitive freight between Central and Western Canada.</p>
+        </div>
+        <div class="card">
+          <h3>Montreal ⇄ Atlantic (Halifax / Moncton)</h3>
+          <p>Regional distribution lane for food, building materials, and port-related freight.</p>
+        </div>
+        <div class="card">
+          <h3>GTA ⇄ Southern Ontario Corridor</h3>
+          <p>High-frequency short-haul lanes serving automotive, manufacturing, and regional distribution.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="card">
-      <p><b>Operating Model</b></p>
-      <ul>
-        <li>Canada-based brokerage operations</li>
-        <li>Digital-first communication</li>
-        <li>Lane-focused capacity planning</li>
-        <li>Long-term shipper & carrier relationships</li>
-      </ul>
+    <div class="map-wrap">
+      <div class="map-title">
+        <h3>Canada Lane Map (Simple View)</h3>
+        <p class="map-note">Illustrative only — lanes expand based on capacity.</p>
+      </div>
+
+      <!-- Simple SVG map: dots + lines (lightweight, fast) -->
+      <svg viewBox="0 0 820 420" width="100%" height="auto" role="img" aria-label="Canada freight lane map">
+        <!-- background -->
+        <rect x="0" y="0" width="820" height="420" fill="#ffffff"/>
+        <rect x="16" y="16" width="788" height="388" fill="#fbfcff" stroke="#d7deea" stroke-width="2" rx="14"/>
+
+        <!-- lines -->
+        <line x1="220" y1="250" x2="300" y2="220" stroke="#0a8bf0" stroke-width="4" opacity="0.9"/>
+        <line x1="220" y1="250" x2="470" y2="250" stroke="#0a8bf0" stroke-width="4" opacity="0.9"/>
+        <line x1="220" y1="250" x2="670" y2="180" stroke="#0a8bf0" stroke-width="4" opacity="0.9"/>
+        <line x1="300" y1="220" x2="730" y2="150" stroke="#0a8bf0" stroke-width="4" opacity="0.6"/>
+
+        <!-- dots -->
+        <circle cx="220" cy="250" r="9" fill="#003366"/>
+        <circle cx="300" cy="220" r="9" fill="#003366"/>
+        <circle cx="470" cy="250" r="9" fill="#003366"/>
+        <circle cx="520" cy="240" r="9" fill="#003366"/>
+        <circle cx="670" cy="180" r="9" fill="#003366"/>
+        <circle cx="730" cy="150" r="9" fill="#003366"/>
+
+        <!-- labels -->
+        <text x="235" y="255" font-size="14" fill="#003366" font-family="Arial" font-weight="700">Toronto (GTA)</text>
+        <text x="315" y="225" font-size="14" fill="#003366" font-family="Arial" font-weight="700">Montreal</text>
+        <text x="485" y="255" font-size="14" fill="#003366" font-family="Arial" font-weight="700">Calgary</text>
+        <text x="535" y="245" font-size="14" fill="#003366" font-family="Arial" font-weight="700">Edmonton</text>
+        <text x="685" y="185" font-size="14" fill="#003366" font-family="Arial" font-weight="700">Vancouver</text>
+        <text x="745" y="155" font-size="14" fill="#003366" font-family="Arial" font-weight="700">Halifax</text>
+      </svg>
     </div>
   </div>
 </section>
 
-<div class="cta">
-  <h2>Ready to Move Freight?</h2>
-  <p>Start with a conversation. Clear lanes. Clear communication. Reliable execution.</p>
+<section id="shippers">
+  <span class="pill">For Shippers</span>
+  <h2>Simple, Reliable Freight Execution</h2>
+  <div class="two-column">
+    <div>
+      <p>
+        Share your lane, dates, commodity, and equipment needs — we respond with clear options and keep you updated until delivery.
+      </p>
+      <h3>How We Help</h3>
+      <ul>
+        <li><b>Fast Quotes</b> – Clear pricing and lane options.</li>
+        <li><b>Carrier Matching</b> – Equipment and availability aligned to your schedule.</li>
+        <li><b>Updates + POD</b> – Communication from pickup to proof of delivery.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>3-Step Process</h3>
+      <ol>
+        <li><b>Send load details</b> (origin, destination, weight, commodity, dates).</li>
+        <li><b>Receive options</b> (rate + timeline + requirements).</li>
+        <li><b>Book & track</b> until delivery and POD.</li>
+      </ol>
+      <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Request Shipper Quote
+      </button>
+    </div>
+  </div>
+</section>
 
-  <a href="https://wa.me/12269751544" target="_blank">
-    <button class="btn btn-primary">Message on WhatsApp</button>
-  </a>
+<section id="carriers">
+  <span class="pill">For Carriers</span>
+  <h2>Run With EarthLine</h2>
+  <div class="two-column">
+    <div>
+      <p>
+        We work with owner-operators and small fleets on Canadian lanes — clear details, respectful communication, and quick follow-ups.
+      </p>
+      <h3>What You Get</h3>
+      <ul>
+        <li><b>Clear load details</b> – commodity, weight, appointments, requirements.</li>
+        <li><b>Consistent communication</b> – check-ins and fast issue resolution.</li>
+        <li><b>Paperwork support</b> – rate confirmations and POD handling.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Start Here</h3>
+      <ol>
+        <li><b>Send your info</b> – equipment, lanes, availability.</li>
+        <li><b>Onboarding</b> – insurance + profile basics.</li>
+        <li><b>Get matched</b> – we send loads that fit your preferences.</li>
+      </ol>
+      <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Carrier Registration
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <span class="pill">Contact</span>
+  <h2>Request a Quote</h2>
+
+  <div class="contact-grid">
+    <div>
+      <p>Send your lane details below. We’ll reply with options as quickly as possible.</p>
+
+      <!-- Demo form layout only (we’ll connect later) -->
+      <form>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" />
+
+        <label for="company">Company (optional)</label>
+        <input id="company" type="text" placeholder="Company name" />
+
+        <label for="role">I am a</label>
+        <select id="role">
+          <option>Shipper</option>
+          <option>Carrier / Owner-Operator</option>
+        </select>
+
+        <label for="origin">Origin (City, Province)</label>
+        <input id="origin" type="text" placeholder="e.g., Toronto, ON" />
+
+        <label for="destination">Destination (City, Province)</label>
+        <input id="destination" type="text" placeholder="e.g., Montreal, QC" />
+
+        <label for="freight">Freight / Equipment</label>
+        <input id="freight" type="text" placeholder="Dry van, reefer, flatbed, LTL, etc." />
+
+        <label for="dates">Pick-up window</label>
+        <input id="dates" type="text" placeholder="Pick-up & delivery window" />
+
+        <label for="message">Details</label>
+        <textarea id="message" placeholder="Commodity, weight, pallets, special requirements..."></textarea>
+
+        <button type="button" class="btn btn-primary">Submit (demo)</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="card">
+        <h3>Direct Contact</h3>
+        <p><b>WhatsApp:</b><br>Coming soon (we’ll add the business number next).</p>
+        <p><b>Email:</b><br>Coming soon (we’ll set up domain email after full setup).</p>
+        <p style="margin-top:10px;"><b>Tip:</b> Use the form to send lane details for now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <h3>Ready to move your next load?</h3>
+  <p>Send your origin, destination, equipment type, and dates — we’ll respond with options.</p>
+  <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    Request a Quote
+  </button>
 </div>
 
 <footer>
-  © 2025 EarthLine Freight Network — Canada-based freight brokerage.  
-  All rights reserved.
+  © 2025 EarthLine Freight Network — Canada-wide freight brokerage. All rights reserved.
 </footer>
 
 </body>
