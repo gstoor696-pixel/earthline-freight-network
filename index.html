@@ -261,4 +261,240 @@
 
 <section id="services">
   <span class="pill">What We Do</span>
-  <h2>Freight & Dispatch Servic
+  <h2>Freight & Dispatch Service</h2>
+
+  <div class="three-column">
+    <div class="card">
+      <h3>FTL / LTL Across Canada</h3>
+      <p>Dry van, reefer, flatbed — shipment planning, carrier sourcing, tracking, and POD follow-up.</p>
+    </div>
+    <div class="card">
+      <h3>Dispatch & Load Coordination</h3>
+      <p>Professional communication with carriers and shippers, appointment setting, and proactive updates.</p>
+    </div>
+    <div class="card">
+      <h3>Clear Communication</h3>
+      <p>Simple process, real humans, same-business-day response when lane details are complete.</p>
+    </div>
+  </div>
+
+  <p class="note">Tip: For the fastest quote, include origin, destination, equipment type, weight, and pickup window.</p>
+</section>
+
+<section id="lanes">
+  <span class="pill">Coverage</span>
+  <h2>Key Lanes We Support</h2>
+
+  <div class="two-column">
+    <div class="map-wrap">
+      <div class="map-title">
+        <h3>Canada-Wide Network</h3>
+        <p class="map-note">Common lanes (examples)</p>
+      </div>
+      <ul>
+        <li>GTA / ON ↔ QC (Montreal, Quebec City)</li>
+        <li>ON ↔ MB / SK / AB (Prairies & Alberta)</li>
+        <li>BC ↔ AB ↔ ON (Western to Central)</li>
+        <li>Atlantic ↔ Central (NS / NB / PEI ↔ ON/QC)</li>
+      </ul>
+      <p class="note">If your lane isn’t listed, still message — we’ll confirm capacity.</p>
+    </div>
+
+    <div class="card">
+      <h3>Equipment Types</h3>
+      <ul>
+        <li>Dry Van</li>
+        <li>Reefer (Temp-controlled)</li>
+        <li>Flatbed</li>
+        <li>LTL Consolidation (case-by-case)</li>
+      </ul>
+      <p class="note">Mention any special requirements: liftgate, tailgate, appointments, temp, straps, tarps, etc.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <h3>Need a Quote Today?</h3>
+  <p>Send the lane details and we’ll reply the same business day (business hours). No spam, no pressure.</p>
+  <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    Request a Freight Quote
+  </button>
+</div>
+
+<section id="shippers">
+  <span class="pill">For Shippers</span>
+  <h2>Simple, Professional Freight Management</h2>
+
+  <div class="two-column">
+    <div class="card">
+      <h3>What You Get</h3>
+      <ul>
+        <li>Fast carrier sourcing</li>
+        <li>Appointment scheduling</li>
+        <li>Shipment tracking + updates</li>
+        <li>POD follow-up</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What We Need to Quote</h3>
+      <ul>
+        <li>Origin + destination (city/province)</li>
+        <li>Pickup date/time window</li>
+        <li>Commodity + weight + dims</li>
+        <li>Equipment type</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="carriers">
+  <span class="pill">For Carriers</span>
+  <h2>Carrier Partners</h2>
+
+  <div class="two-column">
+    <div class="card">
+      <h3>How We Work</h3>
+      <ul>
+        <li>Clear rate confirmation</li>
+        <li>Quick communication</li>
+        <li>On-time pickup/delivery focus</li>
+        <li>POD process support</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Join Our Network</h3>
+      <p>Send your company details and lanes. We’ll reach out when loads match your capacity.</p>
+      <p class="note">You can use the contact form below and choose “Carrier / Owner-Operator.”</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <span class="pill">Contact</span>
+  <h2>Request a Freight Quote</h2>
+  <p>Fill this out and we’ll respond the same business day when lane details are complete.</p>
+
+  <div class="contact-grid">
+    <!-- FORM -->
+    <div class="card">
+      <!-- Replace the action URL with YOUR Formspree endpoint -->
+      <form id="quoteForm" action="https://formspree.io/f/mblnnkrk" method="POST">
+        <!-- Honeypot (spam trap) -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <!-- Optional: email subject line -->
+        <input type="hidden" name="_subject" value="New Quote Request — EarthLineFreight.com" />
+
+        <label for="name">Full Name *</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required />
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required />
+
+        <label for="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" placeholder="+1 (___) ___-____" />
+
+        <label for="iam">I am a *</label>
+        <select id="iam" name="iam" required>
+          <option value="">Select one</option>
+          <option>Shipper</option>
+          <option>Carrier / Owner-Operator</option>
+          <option>Other</option>
+        </select>
+
+        <label for="origin">Origin (City, Province) *</label>
+        <input id="origin" name="origin" type="text" placeholder="e.g., Brampton, ON" required />
+
+        <label for="destination">Destination (City, Province) *</label>
+        <input id="destination" name="destination" type="text" placeholder="e.g., Calgary, AB" required />
+
+        <label for="equipment">Equipment / Freight Type *</label>
+        <input id="equipment" name="equipment" type="text" placeholder="Dry van / Reefer / Flatbed / LTL" required />
+
+        <label for="weight">Weight / Pieces (optional)</label>
+        <input id="weight" name="weight" type="text" placeholder="e.g., 18,000 lbs / 12 pallets" />
+
+        <label for="pickup">Pickup Window (optional)</label>
+        <input id="pickup" name="pickup_window" type="text" placeholder="e.g., Dec 20, 9am–2pm" />
+
+        <label for="details">Details *</label>
+        <textarea id="details" name="details" placeholder="Commodity, dims, temp (if reefer), appointments, special requirements..." required></textarea>
+
+        <button id="submitBtn" class="btn btn-primary" type="submit">Submit Quote Request</button>
+
+        <div id="successBox" class="success">✅ Thanks — your request was sent. We’ll reply soon (same business day when details are complete).</div>
+        <div id="errorBox" class="error">❌ Something went wrong. Please try again, or email us directly.</div>
+
+        <p class="note">
+          By submitting, you agree to be contacted about this request. We don’t spam.
+        </p>
+      </form>
+    </div>
+
+    <!-- SIDE INFO -->
+    <div class="card">
+      <h3>Fastest Quote = Best Details</h3>
+      <ul>
+        <li>Origin + destination</li>
+        <li>Pickup date/time</li>
+        <li>Equipment type</li>
+        <li>Weight / pallets / dims</li>
+        <li>Any special requirements</li>
+      </ul>
+
+      <p class="note">
+        If you’re a carrier, include your MC/DOT (if applicable), trailer type, and preferred lanes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><b>EarthLine Freight Network</b> — Canada-Wide Freight Brokerage</div>
+  <div style="margin-top:8px;">
+    © <span id="year"></span> EarthLine Freight Network • <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Formspree AJAX submit so your success/error boxes work without redirect
+  const form = document.getElementById('quoteForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const successBox = document.getElementById('successBox');
+  const errorBox = document.getElementById('errorBox');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    successBox.style.display = 'none';
+    errorBox.style.display = 'none';
+    submitBtn.disabled = true;
+
+    try {
+      const formData = new FormData(form);
+
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        successBox.style.display = 'block';
+      } else {
+        errorBox.style.display = 'block';
+      }
+    } catch (err) {
+      errorBox.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
