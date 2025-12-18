@@ -405,37 +405,44 @@
         <b>No spam. No automated follow-ups.</b>
       </p>
 
-      <form>
+      <!-- ✅ Formspree connected form -->
+      <form action="https://formspree.io/f/mblnnkrk" method="POST">
+        <!-- Honeypot (spam trap) -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <!-- Email subject -->
+        <input type="hidden" name="_subject" value="New Freight Quote Request — EarthLineFreight.com" />
+
         <label for="name">Name</label>
-        <input id="name" type="text" placeholder="Your name" />
+        <input id="name" name="name" type="text" placeholder="Your name" required />
 
         <label for="company">Company (optional)</label>
-        <input id="company" type="text" placeholder="Company name" />
+        <input id="company" name="company" type="text" placeholder="Company name" />
 
         <label for="role">I am a</label>
-        <select id="role">
-          <option>Shipper</option>
-          <option>Carrier / Owner-Operator</option>
+        <select id="role" name="role" required>
+          <option value="Shipper">Shipper</option>
+          <option value="Carrier / Owner-Operator">Carrier / Owner-Operator</option>
         </select>
 
         <label for="origin">Origin (City, Province)</label>
-        <input id="origin" type="text" placeholder="e.g., Toronto, ON" />
+        <input id="origin" name="origin" type="text" placeholder="e.g., Toronto, ON" required />
 
         <label for="destination">Destination (City, Province)</label>
-        <input id="destination" type="text" placeholder="e.g., Montreal, QC" />
+        <input id="destination" name="destination" type="text" placeholder="e.g., Montreal, QC" required />
 
         <label for="freight">Freight / Equipment</label>
-        <input id="freight" type="text" placeholder="Dry van, reefer, flatbed, LTL, etc." />
+        <input id="freight" name="freight_equipment" type="text" placeholder="Dry van, reefer, flatbed, LTL, etc." required />
 
         <label for="dates">Pick-up window</label>
-        <input id="dates" type="text" placeholder="Pick-up & delivery window" />
+        <input id="dates" name="pickup_window" type="text" placeholder="Pick-up & delivery window" />
 
         <label for="message">Details</label>
-        <textarea id="message" placeholder="Commodity, weight, pallets, special requirements..."></textarea>
+        <textarea id="message" name="details" placeholder="Commodity, weight, pallets, special requirements..." required></textarea>
 
-        <button type="button" class="btn btn-primary">Submit (demo)</button>
-        <button type="button" class="btn btn-primary">Submit Freight Quote Request
-</button>
+        <!-- ✅ ONLY ONE submit button -->
+        <button type="submit" class="btn btn-primary">Submit Freight Quote Request</button>
+
         <p style="margin-top:8px;font-size:12px;color:#444;">
           Your information is used only to prepare your freight quote.
         </p>
